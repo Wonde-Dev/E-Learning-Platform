@@ -9,6 +9,7 @@ import InstructorDashboard from "@/pages/InstructorDashboard";
 import Profile from "@/pages/Profile";
 import Learn from "@/pages/Learn";
 import Checkout from "@/pages/Checkout";
+import Dashboard from "@/pages/Dashboard";
 import Login from "@/pages/Login";
 import NotFound from "@/pages/NotFound";
 import ProtectedRoute from "./ProtectedRoute";
@@ -27,8 +28,15 @@ export default function AppRoutes() {
         <Route path="courses/:slug" element={<CourseDetail />} />
         <Route path="courses/:slug/checkout" element={<Checkout />} />
 
-        {/* /dashboard now just redirects based on role */}
-        <Route path="dashboard" element={<Navigate to="/my-dashboard" replace />} />
+        {/* Student / Learner dashboard */}
+        <Route
+          path="dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Smart redirect based on role */}
         <Route

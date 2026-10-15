@@ -21,6 +21,9 @@ const EnrollmentSchema = new mongoose.Schema(
     },
     completedAt: { type: Date, default: null },
     certificateIssued: { type: Boolean, default: false },
+    certificateId: { type: String, default: "" },
+    certificateIssuedAt: { type: Date, default: null },
+    certificateNote: { type: String, default: "" },
   },
   { timestamps: true }
 );

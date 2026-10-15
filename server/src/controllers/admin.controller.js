@@ -83,12 +83,120 @@ export const deleteCourse = asyncHandler(async (req, res) => {
   res.json(new ApiResponse(200, { deleted: true }, "Course deleted"));
 });
 
+// ── Certificates ───────────────────────────────────────────────────────────
+export const listCertificates = asyncHandler(async (req, res) => {
+  const { page = 1, limit = 50, q, status } = req.query;
+  const filter = {};
+  if (status === "issued") {
+    filter.certificateIssued = true;
+  } else if (status === "pending") {
+    filter.certificateIssued = false;
+  }
+
+  const skip = (Number(page) - 1) * Number(limit);
+  const [items, total] = await Promise.all([
+    Enrollment.find(filter)
+      .populate("user", "firstName lastName email imageUrl clerkId")
+      .populate({
+        path: "course",
+        select: "title slug thumbnail instructor price currency level",
+        populate: { path: "instructor", select: "firstName lastName email imageUrl" },
+      })
+      .sort("-updatedAt")
+      .skip(skip)
+      .limit(Number(limit))
+      .lean(),
+    Enrollment.countDocuments(filter),
+  ]);
+
+  let resultItems = items;
+  if (q) {
+    const lower = q.toLowerCase();
+    resultItems = items.filter(
+      (e) =>
+        e.user?.firstName?.toLowerCase().includes(lower) ||
+        e.user?.lastName?.toLowerCase().includes(lower) ||
+        e.user?.email?.toLowerCase().includes(lower) ||
+        e.course?.title?.toLowerCase().includes(lower) ||
+        e.certificateId?.toLowerCase().includes(lower)
+    );
+  }
+
+  res.json(
+    new ApiResponse(200, {
+      items: resultItems,
+      total: q ? resultItems.length : total,
+      page: Number(page),
+      pages: Math.ceil((q ? resultItems.length : total) / Number(limit)),
+    })
+  );
+});
+
+export const issueCertificate = asyncHandler(async (req, res) => {
+  const { enrollmentId, userId, courseId, note } = req.body;
+  let enrollment;
+
+  if (enrollmentId) {
+    enrollment = await Enrollment.findById(enrollmentId);
+  } else if (userId && courseId) {
+    enrollment = await Enrollment.findOne({ user: userId, course: courseId });
+    if (!enrollment) {
+      enrollment = await Enrollment.create({
+        user: userId,
+        course: courseId,
+        paymentStatus: "free",
+      });
+      await Course.findByIdAndUpdate(courseId, {
+        $inc: { "stats.totalStudents": 1 },
+      });
+    }
+  }
+
+  if (!enrollment) {
+    throw new ApiError(404, "Enrollment or student record not found");
+  }
+
+  if (!enrollment.certificateId) {
+    enrollment.certificateId = `EDU-${Date.now().toString(36).toUpperCase()}-${Math.floor(1000 + Math.random() * 9000)}`;
+  }
+  enrollment.certificateIssued = true;
+  enrollment.certificateIssuedAt = new Date();
+  enrollment.progressPercent = 100;
+  enrollment.completedAt = enrollment.completedAt || new Date();
+  if (note !== undefined) enrollment.certificateNote = note;
+
+  await enrollment.save();
+
+  const populated = await Enrollment.findById(enrollment._id)
+    .populate("user", "firstName lastName email imageUrl clerkId")
+    .populate({
+      path: "course",
+      select: "title slug thumbnail instructor level",
+      populate: { path: "instructor", select: "firstName lastName email imageUrl" },
+    });
+
+  res.json(new ApiResponse(200, populated, "Certificate issued successfully"));
+});
+
+export const revokeCertificate = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const enrollment = await Enrollment.findById(id);
+  if (!enrollment) throw new ApiError(404, "Enrollment not found");
+
+  enrollment.certificateIssued = false;
+  enrollment.certificateIssuedAt = null;
+  await enrollment.save();
+
+  res.json(new ApiResponse(200, { revoked: true, id }, "Certificate revoked successfully"));
+});
+
 // ── Stats ──────────────────────────────────────────────────────────────────
 export const getStats = asyncHandler(async (req, res) => {
-  const [totalUsers, totalCourses, totalEnrollments] = await Promise.all([
+  const [totalUsers, totalCourses, totalEnrollments, totalCertificates] = await Promise.all([
     User.countDocuments(),
     Course.countDocuments(),
     Enrollment.countDocuments(),
+    Enrollment.countDocuments({ certificateIssued: true }),
   ]);
   const instructors = await User.countDocuments({ role: "instructor" });
   const published   = await Course.countDocuments({ status: "published" });
@@ -97,9 +205,9 @@ export const getStats = asyncHandler(async (req, res) => {
     totalUsers,
     totalCourses,
     totalEnrollments,
+    totalCertificates,
     instructors,
     publishedCourses: published,
-    // Revenue is placeholder — wire to payments when available
     totalRevenue: 0,
   }));
 });

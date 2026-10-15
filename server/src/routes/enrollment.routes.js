@@ -17,6 +17,7 @@ router.post(
 );
 
 router.get("/me", requireAuth, enrollmentController.myEnrollments);
+router.get("/certificate/:id", enrollmentController.getCertificate);
 
 router.get("/:courseId", requireAuth, enrollmentController.getOne);
 

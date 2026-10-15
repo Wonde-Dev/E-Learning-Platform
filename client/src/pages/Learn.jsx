@@ -8,9 +8,12 @@ import {
   ChevronDown,
   Clock,
   FileText,
+  Award,
+  Sparkles,
 } from "lucide-react";
 import { useCourse } from "@/hooks/useCourses";
 import { useEnroll, useUpdateProgress, useMyEnrollments } from "@/hooks/useEnrollments";
+import { useUser } from "@/hooks/useUser";
 import { useAuth } from "@clerk/clerk-react";
 import { formatDuration, cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -19,6 +22,7 @@ import { Spinner } from "@/components/ui/Spinner";
 import { VideoPlayer } from "@/components/player/VideoPlayer";
 import { LessonList } from "@/components/player/LessonList";
 import { ProgressBar } from "@/components/player/ProgressBar";
+import CertificateModal from "@/components/common/CertificateModal";
 
 export default function Learn() {
   const { slug } = useParams();
@@ -32,8 +36,10 @@ export default function Learn() {
     (e) => e.course?.slug === slug || e.course?._id === course?._id
   );
 
+  const { data: user } = useUser();
   const [activeLesson, setActiveLesson] = useState(null);
   const [completed, setCompleted] = useState(new Set());
+  const [showCert, setShowCert] = useState(false);
 
   useEffect(() => {
     if (!course) return;
@@ -73,6 +79,7 @@ export default function Learn() {
   const total = allLessons.length;
   const doneCount = completed.size;
   const progressPercent = total ? Math.round((doneCount / total) * 100) : 0;
+  const isCertified = enrollment?.certificateIssued || progressPercent >= 100;
 
   const toggleComplete = async (lesson) => {
     const next = !completed.has(String(lesson._id));
@@ -86,26 +93,85 @@ export default function Learn() {
         completed: next,
       });
     } catch {
-      // revert on failure
       setCompleted(completed);
     }
   };
 
-  return (
-    <section className="container py-6">
-      <div className="mb-4 flex items-center justify-between gap-4">
-        <div>
-          <Link to="/dashboard" className="text-sm text-brand-600 hover:underline">
-            ← Back to dashboard
-          </Link>
-          <h1 className="mt-1 text-xl font-bold">{course.title}</h1>
-        </div>
-        <div className="text-sm text-slate-500">
-          Progress {progressPercent}%
-        </div>
-      </div>
+  const studentName =
+    [user?.firstName, user?.lastName].filter(Boolean).join(" ") ||
+    user?.email ||
+    "Student";
 
-      <ProgressBar value={progressPercent} className="mb-6" />
+  return (
+    <>
+      {showCert && (
+        <CertificateModal
+          certificate={{
+            studentName,
+            courseTitle: course.title,
+            certificateId: enrollment.certificateId || "EDU-CERT-VERIFIED",
+            issuedAt: enrollment.certificateIssuedAt || enrollment.completedAt || new Date(),
+            instructorName: course.instructor
+              ? [course.instructor.firstName, course.instructor.lastName].filter(Boolean).join(" ")
+              : "EduFlow Academy",
+            note: enrollment.certificateNote || "",
+          }}
+          onClose={() => setShowCert(false)}
+        />
+      )}
+
+      <section className="container py-6">
+        <div className="mb-4 flex items-center justify-between gap-4">
+          <div>
+            <Link to="/dashboard" className="text-sm text-brand-600 hover:underline">
+              ← Back to dashboard
+            </Link>
+            <h1 className="mt-1 text-xl font-bold">{course.title}</h1>
+          </div>
+          <div className="flex items-center gap-3">
+            {isCertified && (
+              <Button
+                size="sm"
+                onClick={() => setShowCert(true)}
+                className="gap-1.5 bg-amber-600 hover:bg-amber-700 text-white !text-xs !py-1.5 shadow-sm"
+              >
+                <Award className="h-3.5 w-3.5" />
+                View Certificate
+              </Button>
+            )}
+            <div className="text-sm font-semibold text-slate-600 dark:text-slate-300">
+              Progress {progressPercent}%
+            </div>
+          </div>
+        </div>
+
+        {isCertified && (
+          <div className="mb-5 p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-amber-100/60 dark:from-amber-950/40 dark:to-slate-900 border border-amber-300/80 dark:border-amber-500/30 flex items-center justify-between gap-4 flex-wrap">
+            <div className="flex items-center gap-3">
+              <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-amber-500 text-white shadow-md">
+                <Sparkles className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="font-bold text-sm text-amber-950 dark:text-amber-200">
+                  🎉 Congratulations! You have completed this course!
+                </p>
+                <p className="text-xs text-amber-800 dark:text-amber-300">
+                  Your official certificate of completion has been generated and verified.
+                </p>
+              </div>
+            </div>
+            <Button
+              size="sm"
+              onClick={() => setShowCert(true)}
+              className="gap-1.5 bg-amber-600 hover:bg-amber-700 text-white !text-xs shadow-soft"
+            >
+              <Award className="h-4 w-4" />
+              View / Print Certificate
+            </Button>
+          </div>
+        )}
+
+        <ProgressBar value={progressPercent} className="mb-6" />
 
       <div className="grid gap-6 lg:grid-cols-[1.6fr,1fr]">
         <div className="space-y-4">
@@ -160,5 +226,6 @@ export default function Learn() {
         </aside>
       </div>
     </section>
+  </>
   );
 }

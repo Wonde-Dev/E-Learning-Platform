@@ -56,6 +56,10 @@ export const toggleLessonProgress = async (userId, courseId, lessonId, completed
   if (pct >= 100 && !enrollment.completedAt) {
     enrollment.completedAt = new Date();
     enrollment.certificateIssued = true;
+    enrollment.certificateIssuedAt = new Date();
+    if (!enrollment.certificateId) {
+      enrollment.certificateId = `EDU-${Date.now().toString(36).toUpperCase()}-${Math.floor(1000 + Math.random() * 9000)}`;
+    }
   }
 
   await enrollment.save();

@@ -26,6 +26,10 @@ export const env = {
   CLERK_PUBLISHABLE_KEY: process.env.CLERK_PUBLISHABLE_KEY,
   CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
   CLIENT_URL: process.env.CLIENT_URL || "http://localhost:5173",
+  ADMIN_CLERK_IDS: (process.env.ADMIN_CLERK_IDS || "user_3KioduQ9p5ZJHZFzyI4Q14w0loP")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean),
   CLOUDINARY: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     apiKey: process.env.CLOUDINARY_API_KEY,

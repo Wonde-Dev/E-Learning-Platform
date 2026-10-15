@@ -18,4 +18,8 @@ router.get("/courses",             admin.listAllCourses);
 router.patch("/courses/:id/status", admin.updateCourseStatus);
 router.delete("/courses/:id",       admin.deleteCourse);
 
+router.get("/certificates",        admin.listCertificates);
+router.post("/certificates/issue",  admin.issueCertificate);
+router.delete("/certificates/:id",  admin.revokeCertificate);
+
 export default router;

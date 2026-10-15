@@ -116,3 +116,23 @@
 .tech .badge.bg-brand-50 {
   @apply bg-emerald-500/10 text-emerald-400;
 }
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-certificate,
+  #printable-certificate * {
+    visibility: visible;
+  }
+  #printable-certificate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 2.5rem;
+    box-shadow: none !important;
+    border: 6px double #d97706 !important;
+  }
+}
