@@ -1,0 +1,298 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "clear": "Clear",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "open": "Open",
+    "yes": "Yes",
+    "no": "No",
+    "free": "Free",
+    "paid": "Paid",
+    "discount": "Discount",
+    "originalPrice": "Original price",
+    "salePrice": "Sale price",
+    "enroll": "Enroll",
+    "enrollNow": "Enroll now",
+    "continueLearning": "Continue learning",
+    "review": "Review",
+    "startLearning": "Start learning",
+    "browseCourses": "Browse courses",
+    "myDashboard": "My dashboard",
+    "instructorDashboard": "Instructor dashboard",
+    "profile": "Profile",
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "signOut": "Sign out",
+    "getStarted": "Get started",
+    "welcome": "Welcome",
+    "language": "Language",
+    "theme": "Theme",
+    "english": "English",
+    "amharic": "Amharic (አማርኛ)"
+  },
+  "nav": {
+    "home": "Home",
+    "courses": "Courses",
+    "dashboard": "Dashboard",
+    "instructor": "Instructor",
+    "admin": "Admin",
+    "profile": "Profile",
+    "contact": "Contact",
+    "about": "About"
+  },
+  "home": {
+    "hero": {
+      "badge": "New · AI-powered learning paths",
+      "title": "Learn without limits.",
+      "subtitle": "Master in-demand skills with expert-led courses, hands-on projects, and a community that keeps you moving forward.",
+      "ctaPrimary": "Browse courses",
+      "ctaSecondary": "Go to dashboard"
+    },
+    "stats": {
+      "students": "Students",
+      "courses": "Courses",
+      "rating": "Rating"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "subtitle": "Start learning in three simple steps",
+      "steps": [
+        {
+          "title": "Choose a course",
+          "desc": "Browse our library of expert-led courses across tech, design, business, and more"
+        },
+        {
+          "title": "Learn at your pace",
+          "desc": "On-demand video lessons, hands-on projects, and practice exercises"
+        },
+        {
+          "title": "Earn a certificate",
+          "desc": "Show off your skills with a verified certificate upon completion"
+        }
+      ]
+    },
+    "featured": {
+      "title": "Popular tech courses",
+      "subtitle": "Top-rated courses in web development, data science, and design",
+      "trendingTitle": "Trending in tech",
+      "trendingSubtitle": "In-demand skills employers are hiring for",
+      "viewAll": "View all"
+    }
+  },
+  "courses": {
+    "title": "Explore Courses",
+    "subtitle": "Find the perfect course for your goals",
+    "totalCourses": "{{count}} courses available",
+    "filters": {
+      "searchPlaceholder": "Search courses…",
+      "allLevels": "All levels",
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "allPrices": "All prices",
+      "free": "Free",
+      "paid": "Paid",
+      "sortBy": "Sort by",
+      "newest": "Newest",
+      "oldest": "Oldest",
+      "popular": "Most popular",
+      "priceLowHigh": "Price: Low to High",
+      "priceHighLow": "Price: High to Low"
+    },
+    "empty": {
+      "title": "No courses found",
+      "description": "Try a different filter or search term."
+    }
+  },
+  "courseDetail": {
+    "enroll": "Enroll",
+    "enrollFree": "Enroll for free",
+    "enrollNow": "Enroll now",
+    "continueLearning": "Continue learning",
+    "whatYouWillLearn": "What you'll learn",
+    "description": "Description",
+    "courseContent": "Course content",
+    "requirements": "Requirements",
+    "instructor": "Instructor",
+    "reviews": "Reviews",
+    "students": "students",
+    "lessons": "lessons",
+    "duration": "duration",
+    "language": "Language",
+    "level": "Level",
+    "certificate": "Certificate of completion",
+    "lifetimeAccess": "Lifetime access",
+    "onDemandVideo": "on-demand video",
+    "reviewsCount": "{{count}} reviews",
+    "writeReview": "Write a review",
+    "ratingRequired": "Pick a rating",
+    "commentPlaceholder": "Share your experience…",
+    "submitReview": "Submit review"
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "stats": {
+      "enrolled": "Enrolled",
+      "inProgress": "In progress",
+      "completed": "Completed",
+      "avgProgress": "Avg. progress"
+    },
+    "myCourses": "My Courses",
+    "browseMore": "Browse more",
+    "empty": {
+      "title": "You're not enrolled yet",
+      "description": "Explore our library and start your first course today.",
+      "action": "Browse courses"
+    },
+    "progress": "Progress",
+    "continue": "Continue",
+    "review": "Review"
+  },
+  "instructor": {
+    "title": "Instructor dashboard",
+    "subtitle": "Manage your courses, track performance and grow your audience.",
+    "newCourse": "New course",
+    "stats": {
+      "courses": "Courses",
+      "students": "Students",
+      "lessons": "Lessons",
+      "revenue": "Revenue"
+    },
+    "yourCourses": "Your courses",
+    "empty": {
+      "title": "You haven't published any courses yet",
+      "description": "Create your first course and start teaching today.",
+      "action": "Create course"
+    },
+    "view": "View",
+    "edit": "Edit",
+    "status": {
+      "published": "Published",
+      "draft": "Draft",
+      "archived": "Archived"
+    }
+  },
+  "profile": {
+    "title": "Your profile",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "headline": "Headline",
+    "bio": "Bio",
+    "avatar": "Profile picture",
+    "changeAvatar": "Change avatar",
+    "saveChanges": "Save changes",
+    "role": "Role",
+    "settings": "Settings"
+  },
+  "learn": {
+    "backToDashboard": "Back to dashboard",
+    "courseContent": "Course content",
+    "progress": "Progress",
+    "markComplete": "Mark complete",
+    "markedComplete": "Done",
+    "processing": "Processing…"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "steps": {
+      "payment": "Payment method",
+      "review": "Review & confirm",
+      "success": "Success"
+    },
+    "paymentMethods": {
+      "card": "Credit / Debit Card",
+      "paypal": "PayPal",
+      "bank": "Bank Transfer"
+    },
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "total": "Total",
+    "secureCheckout": "Secure checkout with SSL encryption",
+    "backToCourse": "Back to course",
+    "continueToReview": "Continue to review",
+    "completeEnrollment": "Complete enrollment",
+    "processing": "Processing…",
+    "success": {
+      "title": "You're enrolled!",
+      "subtitle": "Start learning right away. Your certificate will be issued upon completion.",
+      "goToCourse": "Go to course",
+      "goToDashboard": "Dashboard"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "form": {
+      "name": "Your name",
+      "email": "Email address",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    },
+    "info": {
+      "email": "Email",
+      "emailDesc": "support@eduflow.dev",
+      "location": "Location",
+      "locationDesc": "Addis Ababa, Ethiopia & Global",
+      "hours": "Business Hours",
+      "hoursDesc": "Mon-Fri 9am-6pm EAT"
+    }
+  },
+  "about": {
+    "title": "About EduFlow",
+    "mission": "Our Mission",
+    "missionText": "To democratize quality education by making expert-led courses accessible to everyone, everywhere. We believe learning should be engaging, practical, and transformative.",
+    "vision": "Our Vision",
+    "visionText": "A world where anyone can acquire new skills and advance their career regardless of their background or location.",
+    "values": "Our Values",
+    "valuesList": [
+      { "title": "Quality First", "desc": "Every course is curated by industry experts with real-world experience" },
+      { "title": "Learner-Centric", "desc": "We design every feature with the student's success in mind" },
+      { "title": "Continuous Innovation", "desc": "We constantly improve our platform with the latest learning technology" },
+      { "title": "Community Driven", "desc": "Learning is better together — we foster connections between students and instructors" }
+    ],
+    "stats": {
+      "students": "Students worldwide",
+      "courses": "Expert-led courses",
+      "instructors": "Industry professionals",
+      "countries": "Countries reached"
+    },
+    "team": "Our Team",
+    "teamText": "We're a diverse team of educators, engineers, and designers passionate about transforming online education."
+  },
+  "footer": {
+    "learn": "Learn",
+    "teach": "Teach",
+    "company": "Company",
+    "courses": "Courses",
+    "paths": "Learning paths",
+    "certificates": "Certificates",
+    "becomeInstructor": "Become an instructor",
+    "guidelines": "Guidelines",
+    "payouts": "Payouts",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© {{year}} EduFlow. All rights reserved.",
+    "builtWith": "Built with ❤️ using MERN + Clerk"
+  }
+}

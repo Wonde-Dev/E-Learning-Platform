@@ -1,0 +1,298 @@
+{
+  "common": {
+    "loading": "በመጫን ላይ...",
+    "error": "ስህተት አለ",
+    "retry": "እንደገና ሞክር",
+    "save": "አስቀምጥ",
+    "cancel": "ሰርዝ",
+    "delete": "ሰርዝ",
+    "edit": "አስተካክል",
+    "view": "ተመልከት",
+    "search": "ፈልግ",
+    "filter": "ያስገድድ",
+    "sort": "ደርድር",
+    "clear": "አጥፋ",
+    "submit": "ላክ",
+    "back": "ተመለስ",
+    "next": "ቀጣይ",
+    "previous": "የቀድሞው",
+    "close": "ዝጋ",
+    "open": "ክፈት",
+    "yes": "አዎ",
+    "no": "የለም",
+    "free": "ነፃ",
+    "paid": "የተከፈለ",
+    "discount": "ሽያጭ",
+    "originalPrice": "የቀድሞው ዋጋ",
+    "salePrice": "የሽያጭ ዋጋ",
+    "enroll": "መመዝገብ",
+    "enrollNow": "አሁን መመዝገብ",
+    "continueLearning": "ትምህርትን ቀጥል",
+    "review": "ግምገማ",
+    "startLearning": "ትምህርትን ጀምር",
+    "browseCourses": "ትምህርቶችን ፈልግ",
+    "myDashboard": "የእኔ ዳሽቦርድ",
+    "instructorDashboard": "የአስተማሪ ዳሽቦርድ",
+    "profile": "መገለጫ",
+    "signIn": "ግባ",
+    "signUp": "መመዝገብ",
+    "signOut": "ውጣ",
+    "getStarted": "ጀምር",
+    "welcome": "እንኳን ደህና መጣህ",
+    "language": "ቋንቋ",
+    "theme": "ምልክት",
+    "english": "እንግሊዝኛ",
+    "amharic": "አማርኛ"
+  },
+  "nav": {
+    "home": "መነሻ",
+    "courses": "ትምህርቶች",
+    "dashboard": "ዳሽቦርድ",
+    "instructor": "አስተማሪ",
+    "admin": "አስተዳዳሪ",
+    "profile": "መገለጫ",
+    "contact": "አግኙን",
+    "about": "ስለ እኛ"
+  },
+  "home": {
+    "hero": {
+      "badge": "አዲስ · የ AI የሚመራ የምርጫ መንገዶች",
+      "title": "አይደለም ትምህርት።",
+      "subtitle": "በአስተማሪዎች የተመራው ትምህርት፣ በእጅ የተሰራ ፕሮጀክቶችና የሚያጠብቃዎት ማህበረሰብ በማሻሻል የሚያስፈልገውን ክህሎት ያጠናቅቁ።",
+      "ctaPrimary": "ትምህርቶችን ፈልግ",
+      "ctaSecondary": "ወደ ዳሽቦርድ ሂድ"
+    },
+    "stats": {
+      "students": "ተማሪዎች",
+      "courses": "ትምህርቶች",
+      "rating": "ደረጃ"
+    },
+    "howItWorks": {
+      "title": "እንዴት እንደሚሰራ",
+      "subtitle": "በሦስት ቀላል ደረጃዎች ትምህርትን ጀምር",
+      "steps": [
+        {
+          "title": "ትምህርት ይምረጡ",
+          "desc": "በቴክ፣ ዲዛይን፣ ቢዝነስ እና በተጨማሪም ውስጥ ያሉትን የአስተማሪ የተመራ ትምህርቶችን ይመልከቱ"
+        },
+        {
+          "title": "በፈቃድዎ ይማሩ",
+          "desc": "የሚጠበቅ ቪዲዮ ትምህርቶች፣ በእጅ የተሰራ ፕሮጀክቶች እና የማሰባሰብ ክህሎቶች"
+        },
+        {
+          "title": "ሲርቲፊኬት ያግኙ",
+          "desc": "ትምህርቱን በተሳካ ጊዜ ሲርቲፊኬትዎን ያግኙ እና ክህሎትዎን ያሳዩ"
+        }
+      ]
+    },
+    "featured": {
+      "title": "የተወደዱ የቴክ ትምህርቶች",
+      "subtitle": "በውድቀት የተወደዱ የዌብ ንብረት፣ የውጭ ውስን እና የዲዛይን ትምህርቶች",
+      "trendingTitle": "በቴክ ውስጥ የሚወድዱ",
+      "trendingSubtitle": "የሚያስፈልጉ ክህሎቶች የሚያሳዱት",
+      "viewAll": "ሁሉንም ይመልከቱ"
+    }
+  },
+  "courses": {
+    "title": "ትምህርቶችን ይመልከቱ",
+    "subtitle": "ለጉዞዎ የሚያስተምረውን ትምህርት ያግኙ",
+    "totalCourses": "{{count}} ትምህርቶች አሉ",
+    "filters": {
+      "searchPlaceholder": "ትምህርቶችን ፈልግ…",
+      "allLevels": "ሁሉም ደረጃዎች",
+      "beginner": "ጀማሪ",
+      "intermediate": "መካከለኛ",
+      "advanced": "ከፍተኛ",
+      "allPrices": "ሁሉም ዋጋዎች",
+      "free": "ነፃ",
+      "paid": "የተከፈለ",
+      "sortBy": "ደርድር በ",
+      "newest": "አዲሱ",
+      "oldest": "የቀድሞው",
+      "popular": "በጣም የተወደደ",
+      "priceLowHigh": "ዋጋ: ከቀላል ወደ የዋጋ",
+      "priceHighLow": "ዋጋ: ከየዋጋ ወደ ቀላል"
+    },
+    "empty": {
+      "title": "ምንም ትምህርት አልተገኘም",
+      "description": "ሌላ የፍሰት ወይም የፍለጋ ቃል ይሞክሩ።"
+    }
+  },
+  "courseDetail": {
+    "enroll": "መመዝገብ",
+    "enrollFree": "ነፃ መመዝገብ",
+    "enrollNow": "አሁን መመዝገብ",
+    "continueLearning": "ትምህርትን ቀጥል",
+    "whatYouWillLearn": "ምን ያስተምራሉ",
+    "description": "መግለጫ",
+    "courseContent": "የትምህርቱ ይዘት",
+    "requirements": "የሚያስፈልጉ",
+    "instructor": "አስተማሪ",
+    "reviews": "ግምገማዎች",
+    "students": "ተማሪዎች",
+    "lessons": "ትምህርቶች",
+    "duration": "የተወሰደ ጊዜ",
+    "language": "ቋንቋ",
+    "level": "ደረጃ",
+    "certificate": "የሙያ ሲርቲፊኬት",
+    "lifetimeAccess": "ህይወት የሚቀጥር ክፈት",
+    "onDemandVideo": "የሚጠበቅ ቪዲዮ",
+    "reviewsCount": "{{count}} ግምገማዎች",
+    "writeReview": "ግምገማ ይፃፉ",
+    "ratingRequired": "ደረጃ ይምረጡ",
+    "commentPlaceholder": "ልምድዎን ያካትቱ…",
+    "submitReview": "ግምገማውን ላክ"
+  },
+  "dashboard": {
+    "welcome": "እንኳን ደህና መጣህ",
+    "stats": {
+      "enrolled": "የተመዘገቡ",
+      "inProgress": "በሂደት ላይ",
+      "completed": "የተጠናቀቁ",
+      "avgProgress": "አማካይ እድገት"
+    },
+    "myCourses": "የእኔ ትምህርቶች",
+    "browseMore": "ተጨማሪ ፈልግ",
+    "empty": {
+      "title": "እስካሁን የተመዘገቡ ለማይገኙ",
+      "description": "የእኛን ትምህርት ቤተ መፃዕት ይመልከቱ እና የመጀመሪያዎን ትምህርት ያስጀምሩ።",
+      "action": "ትምህርቶችን ፈልግ"
+    },
+    "progress": "እድገት",
+    "continue": "ቀጥል",
+    "review": "ግምገማ"
+  },
+  "instructor": {
+    "title": "የአስተማሪ ዳሽቦርድ",
+    "subtitle": "ትምህርቶችዎን ያስተዳድሩ፣ አፈጻጸምን ያሳዩ እና ተማሪዎችዎን ያስተዋውቁ።",
+    "newCourse": "አዲስ ትምህርት",
+    "stats": {
+      "courses": "ትምህርቶች",
+      "students": "ተማሪዎች",
+      "lessons": "ትምህርቶች",
+      "revenue": "ገቢ"
+    },
+    "yourCourses": "የእኔ ትምህርቶች",
+    "empty": {
+      "title": "እስካሁን ምንም ትምህርት አልፈረሱም",
+      "description": "የመጀመሪያዎን ትምህርት ይፍጠሩ እና አሁን መማሪያ ጀምር።",
+      "action": "ትምህርት ፍጠር"
+    },
+    "view": "ተመልከት",
+    "edit": "አስተካክል",
+    "status": {
+      "published": "ተለዋዋጭ",
+      "draft": "ቁልፍ",
+      "archived": "ቀደም ያስቀረ"
+    }
+  },
+  "profile": {
+    "title": "የእኔ መገለጫ",
+    "firstName": "የመጀመሪያ ስም",
+    "lastName": "የዚህሱ ስም",
+    "headline": "ዋና ርዕስ",
+    "bio": "ራስ ማጠቃለያ",
+    "avatar": "የመገለጫ ስዕል",
+    "changeAvatar": "ስዕል ቀይር",
+    "saveChanges": "ለውጦችን አስቀምጥ",
+    "role": "ሚና",
+    "settings": "ቅንብሮች"
+  },
+  "learn": {
+    "backToDashboard": "ወደ ዳሽቦርድ ተመለስ",
+    "courseContent": "የትምህርቱ ይዘት",
+    "progress": "እድገት",
+    "markComplete": "ከፍተኛ ያድርግ",
+    "markedComplete": "ተጠናቀቀ",
+    "processing": "በሂደት ላይ…"
+  },
+  "checkout": {
+    "title": "ክፍያ",
+    "steps": {
+      "payment": "የክፍያ ዘዴ",
+      "review": "ግምገማ እና ማረጋገጫ",
+      "success": "ስኬት"
+    },
+    "paymentMethods": {
+      "card": "የክረዲት / የዲቢት ካርድ",
+      "paypal": "ፔይፓል",
+      "bank": "የባንክ ሌላውጫ"
+    },
+    "subtotal": "የመካከል ጠቅላላ",
+    "discount": "ሽያጭ",
+    "total": "ጠቅላላ",
+    "secureCheckout": "SSL እንደግራፊ የተጠበቀ ክፍያ",
+    "backToCourse": "ወደ ትምህርቱ ተመለስ",
+    "continueToReview": "ወደ ግምገማ ቀጥል",
+    "completeEnrollment": "መመዝገብን ያጠናቅቁ",
+    "processing": "በሂደት ላይ…",
+    "success": {
+      "title": "ተመዝግበህ!",
+      "subtitle": "አሁን ትምህርትን ጀምር። ሲርቲፊኬትዎ ትምህርቱ ባለፈ ይሰጣል።",
+      "goToCourse": "ወደ ትምህርቱ ሂድ",
+      "goToDashboard": "ዳሽቦርድ"
+    }
+  },
+  "contact": {
+    "title": "እኛን ያግኙ",
+    "subtitle": "ከእርስዎ ጋር መናገር እወዳለሁ። መልዕክትዎን ያስቀምጡ እና በቅርቡ እንመልስላቸው።",
+    "form": {
+      "name": "ስምዎ",
+      "email": "ኢሜይል አድራሻ",
+      "subject": "ርዕስ",
+      "message": "መልዕክት",
+      "submit": "መልዕክቱን ላክ",
+      "submitting": "በልት ላይ…",
+      "success": "መልዕክቱ በስኬት ተልኳል!",
+      "error": "መልዕክቱን ማድረግ አልተሳካም። እባክዎ እንደገና ይሞክሩ።"
+    },
+    "info": {
+      "email": "ኢሜይል",
+      "emailDesc": "support@eduflow.dev",
+      "location": "አድራሻ",
+      "locationDesc": "አዲስ አበባ፣ ኢትዮጵያ እና ዓለም አቀፍ",
+      "hours": "የሥራ ሰዓቶች",
+      "hoursDesc": "ሰኔ-ዓርብ 9፡00-6፡00 የኢትዮጵያ ሰዓት"
+    }
+  },
+  "about": {
+    "title": "ስለ EduFlow",
+    "mission": "የእኛ ስልት",
+    "missionText": "የተሳካ ትምህርትን ለሁሉም በሚቻለው ደረጃ ማድረግ። ትምህርት የሚያስደስት፣ በተግባር የሚደርስ እና የሚቀይር ነው የምናምንበት።",
+    "vision": "የእኛ ራዕይ",
+    "visionText": "ማንኛውም ያለው የቀድሞ ታሪክ ወይም አካባቢ ተቀባይነት ካለው የሚያስፈልገውን ክህሎት ያግኝ እና የሀብት መንገድን ያስቀጥር ዓለም።",
+    "values": "የእኛ አካላት",
+    "valuesList": [
+      { "title": "ጥራት በፊት", "desc": "ሁሉም ትምህርቶች በኢንዱስትሪ አስተማሪዎች የተመረጡ ናቸው" },
+      { "title": "ተማሪ በማዕከል", "desc": "ሁሉንም ዘርፎችን በተማሪው ስኬት ላይ እንደሚፈጥሩ እንዳስተዳድሩ" },
+      { "title": "የሚቀጥር ማሻሻያ", "desc": "የትምህርት ቴክኖሎጂውን በመጨረሻ ማሻሻያ በመቻቻል ፕላትፎርሙን እንጠናቀቃለን" },
+      { "title": "የማህበረሰብ የተመሠረተ", "desc": "ትምህርት በአንድነት ይሻላል — ተማሪዎች እና አስተማሪዎች መካከል ግንኙነት እንፈጥራለን" }
+    ],
+    "stats": {
+      "students": "በዓለም አቀፍ ተማሪዎች",
+      "courses": "የአስተማሪ የተመራ ትምህርቶች",
+      "instructors": "የኢንዱስትሪ ሕብረተሰቦች",
+      "countries": "የደረሱ ሀገራት"
+    },
+    "team": "የእኛ ቡድን",
+    "teamText": "ትምህርትን በኢንተርኔት ላይ ለማቀየር የሚፈልጉ ትምህርተኞች፣ ኢንጂነሮች እና ዲዛይነሮች የምንሆነው ተወዳጅ ቡድን ነን።"
+  },
+  "footer": {
+    "learn": "ትምህርት",
+    "teach": "ማስተማር",
+    "company": "ኩባንያ",
+    "courses": "ትምህርቶች",
+    "paths": "የምርጫ መንገዶች",
+    "certificates": "ሲርቲፊኬቶች",
+    "becomeInstructor": "አስተማሪ ሁን",
+    "guidelines": "መመሪያዎች",
+    "payouts": "ክፍያዎች",
+    "about": "ስለ እኛ",
+    "careers": "ሥራ አዋጅ",
+    "contact": "አግኙን",
+    "privacy": "የግል ፖሊሲ",
+    "terms": "የአገልግሎት ውሎች",
+    "copyright": "© {{year}} EduFlow. ሁሉም መብቶች የተጠበቁት።",
+    "builtWith": "❤️ በ MERN + Clerk የተሠራ"
+  }
+}
