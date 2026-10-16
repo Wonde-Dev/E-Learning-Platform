@@ -13,6 +13,9 @@ const EnrollmentSchema = new mongoose.Schema(
       enum: ["free", "pending", "paid", "refunded"],
       default: "free",
     },
+    paymentMethod: { type: String, default: "telebirr" },
+    paymentReference: { type: String, default: "" },
+    paymentPhone: { type: String, default: "" },
     completedLessons: [{ type: String }],
     progressPercent: { type: Number, default: 0 },
     lastLesson: {
