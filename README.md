@@ -7,7 +7,7 @@ Replace the example paths below with screenshots of your actual application. Sav
 
 ### Home Page
 
-<img src="client/src/assets/145874475427346552.jpeg" alt="E-Learning Platform Home Page" width="800"/>
+<img src="client/src/assets/145874475427346552.jpeg" alt="E-Learning Platform Home Page" width="800" height = "400"/>
 
 ### Courses Page
 
