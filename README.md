@@ -1,83 +1,93 @@
 E-Learning Platform
-A full-stack e-learning platform designed to help learners discover courses, enroll in learning experiences, and access course content online. The project includes a client application and a server API, with authentication and media-management integrations.
-Project status: Under active development. Features, routes, and setup details may change as the project evolves.
+A full-stack e-learning platform for discovering courses, enrolling in learning experiences, and accessing educational content online.
+Platform Screenshots
+Replace the example paths below with screenshots of your actual application. Save your images in the docs/screenshots/ folder, or update the paths to match where you store them.
+
+## 📸 Platform Screenshots
+
+### Home Page
+
+<img src="client/src/assets/145874475427346552.jpeg" alt="E-Learning Platform Home Page" width="800"/>
+
+### Courses Page
+
+<img src="docs/screenshots/courses.png" alt="Courses Page" width="800"/>
+
+### Student Dashboard
+
+<img src="docs/screenshots/student-dashboard.png" alt="Student Dashboard" width="800"/>
+
+### Admin Dashboard
+
+<img src="docs/screenshots/admin-dashboard.png" alt="Admin Dashboard" width="800"/>
 
 Features
-The following describes the intended capabilities of the platform; confirm each item against the current implementation before presenting it as production-ready.
-- Authentication: User sign-in and session handling using Clerk.
-- Course management: Organize and manage courses and their learning content.
-- Enrollment: Support learner enrollment in courses.
-- Media management: Integrate with Cloudinary for supported media assets.
-- Admin tools: Provide administrative workflows for managing platform content.
-- Responsive client: A web client for accessing the platform on supported screen sizes.
+The platform is being developed to support online learning and course management. Depending on the current implementation, features may include:
+- User authentication and session management with Clerk
+- Course browsing and course details
+- Course enrollment
+- Admin workflows for managing courses and learning content
+- Media management through Cloudinary
+- A responsive web interface
+Update this list so it includes only features that are implemented and working in your current version.
+
 Technology Stack
-Based on the project's current architecture, the stack includes:
-- Client: JavaScript and React (confirm the exact framework and build tool in client/package.json).
-- Server: Node.js and Express.
-- Database: MongoDB.
-- Authentication: Clerk.
-- Media storage: Cloudinary.
-- Development tools: npm and Git.
+- Frontend: React / JavaScript (confirm the framework and build tool in client/package.json)
+- Backend: Node.js and Express
+- Database: MongoDB
+- Authentication: Clerk
+- Media management: Cloudinary
+- Version control: Git and GitHub
 Project Structure
 E-Learning-Platform/
-├── client/       # Frontend application
-├── server/       # Backend API
-└── README.md
-Your repository may contain additional folders and configuration files. Check the actual project tree for the complete structure.
+├── client/                 # Frontend application
+├── server/                 # Backend API
+├── docs/
+│   └── screenshots/        # README screenshots
+├── README.md
+└── LICENSE
+Your actual repository may include additional folders and files.
+Run Locally
 Prerequisites
-Install the following before running the project:
-- Node.js (use a version supported by the project's package files; Node.js 18.18 or newer is suitable if that requirement applies to your server)
-- npm
-- A MongoDB database (local MongoDB or MongoDB Atlas)
-- A Clerk application and its required keys
-- Cloudinary credentials if you use its media features
-Getting Started
-1. Clone the repository
-git clone https://github.com/Wonde-Dev/E-Learning-Platform.git
-cd E-Learning-Platform
-2. Install dependencies
-Install dependencies in each application directory that has its own package.json:
+- Node.js and npm
+- MongoDB (local installation or MongoDB Atlas)
+- Clerk credentials if authentication is enabled
+- Cloudinary credentials if Cloudinary features are enabled
+1. Install server dependencies
 cd server
 npm install
-Then, in a second terminal or after returning to the root:
-cd ../client
+2. Install client dependencies
+Open another terminal, or return to the project root and run:
+cd client
 npm install
 3. Configure environment variables
-Check the server and client source code for the exact environment-variable names it reads. Create local .env files in the appropriate directories and supply your own values. Do not commit real credentials.
-Typical server-side settings may include:
+Create the .env files in the directories expected by your code. Check your source files to confirm the exact variable names.
+Example server configuration:
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 CLERK_SECRET_KEY=your_clerk_secret_key
 CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-Typical client-side settings may include a Clerk publishable key, for example:
+Example client configuration (the prefix depends on your frontend build tool):
 VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-Important: These are examples, not guaranteed variable names for this repository. Use the names expected by your code and framework. Some frameworks require a specific prefix for client-exposed variables. Never expose secret keys in client-side code.
+These are examples only; use the names expected by your application. Never commit real secrets or expose server-side secret keys in client-side code.
 4. Start the applications
-Use the scripts defined in each directory's package.json. For example, if the server defines a dev script:
+Run the scripts defined in each directory's package.json. For example, if the server has a dev script:
 cd server
 npm run dev
-If the client defines a dev script:
+If the client has a dev script:
 cd client
 npm run dev
-If the available scripts differ, run npm run inside the relevant directory to list them. The terminal will display the local URL for the client; check the server configuration for its API port.
-Environment and Security Notes
-- Keep .env files and credentials out of Git. Add them to .gitignore.
-- Provide a .env.example containing variable names and safe placeholders, never real secrets.
-- Validate and authorize administrative operations on the server, not only in the client UI.
-- Keep authentication, database, and media-provider secret keys on the server.
-- Configure production CORS, cookie settings, and allowed origins for your deployment.
-- Do not upload private course material unless you have the rights and access controls needed for it.
-- Rotate any secret that has accidentally been committed or shared.
-Development Workflow
-1. Create a feature branch for larger changes.
-2. Make and test your changes locally.
-3. Check git status and review your diff before committing.
-4. Never commit .env, API keys, database passwords, or user data.
-5. Push your branch and open a pull request if you are collaborating with others.
+Run npm run inside either directory to see the scripts available in that package. Check the terminal output for the local URL and port.
+Security
+- Keep .env files out of version control.
+- Provide a .env.example with placeholder values, not real credentials.
+- Enforce authentication and authorization on the backend, especially for admin actions.
+- Keep secret API keys on the server.
+- Configure production CORS, cookies, and allowed origins before deployment.
+- Only upload content you have the right to distribute.
 Contributing
-Contributions, bug reports, and suggestions are welcome. For substantial changes, open an issue first to discuss the proposal. Please include reproduction steps for bug reports and avoid sharing credentials or personal data.
+Bug reports, suggestions, and contributions are welcome. For major changes, open an issue to discuss the proposal first. Never include passwords, API keys, or private user information in issues or pull requests.
 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-Third-party libraries, services, icons, fonts, images, and course materials may be subject to their own licenses and terms. This project's license does not override those terms.
+This project is licensed under the MIT License. See LICENSE for details. Third-party dependencies and media may have separate license terms.
